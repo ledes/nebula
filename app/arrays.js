@@ -51,17 +51,28 @@ exports.arraysAnswers = {
   },
 
   duplicates : function(arr) {
-
+    var dupli = [];
+    for (i = arr.length; i >=0; i--){
+      if (_.lastIndexOf(arr, arr[i]) != _.indexOf(arr, arr[i])){
+        dupli.push(arr[i]);
+      }
+    }
+    return _.uniq(dupli);
   },
 
   square : function(arr) {
+    var new_Array = []
     for (var i= 0; i < arr.length; i++){
-      arr[i]**2;
-    }
-    return arr;
+    new_Array.push(arr[i]* arr[i]);
+  }
+    return new_Array;
   },
 
   findAllOccurrences : function(arr, target) {
-
+  var index =[];
+  for (i = 0; i < arr.length; i++)
+    if(arr[i]== target)
+      index.push(i);
+    return index;
   }
 };
